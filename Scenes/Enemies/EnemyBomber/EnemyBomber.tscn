@@ -1,0 +1,149 @@
+[gd_scene load_steps=19 format=3 uid="uid://dx2clgkp1a5d4"]
+
+[ext_resource type="PackedScene" uid="uid://dts4qr3j5cjmc" path="res://Scenes/Enemies/EnemyShip/EnemyShip.tscn" id="1_0s12u"]
+[ext_resource type="Texture2D" uid="uid://dits7k8byw8v1" path="res://assets/ships/bomber_1.png" id="2_euski"]
+[ext_resource type="Texture2D" uid="uid://cakduing16poj" path="res://assets/ships/bomber_2.png" id="3_qkn86"]
+[ext_resource type="Texture2D" uid="uid://byxn6pi8avebo" path="res://assets/ships/bomber_3.png" id="4_2c8oo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qkn86"]
+radius = 20.0
+height = 60.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khcak"]
+atlas = ExtResource("2_euski")
+region = Rect2(0, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkn86"]
+atlas = ExtResource("2_euski")
+region = Rect2(48, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c8oo"]
+atlas = ExtResource("2_euski")
+region = Rect2(96, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iggtj"]
+atlas = ExtResource("2_euski")
+region = Rect2(144, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i22tx"]
+atlas = ExtResource("3_qkn86")
+region = Rect2(0, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2su4q"]
+atlas = ExtResource("3_qkn86")
+region = Rect2(48, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y0u1"]
+atlas = ExtResource("3_qkn86")
+region = Rect2(96, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ardw6"]
+atlas = ExtResource("3_qkn86")
+region = Rect2(144, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0f7n"]
+atlas = ExtResource("4_2c8oo")
+region = Rect2(0, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_803xd"]
+atlas = ExtResource("4_2c8oo")
+region = Rect2(48, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7u4q"]
+atlas = ExtResource("4_2c8oo")
+region = Rect2(96, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7f8y"]
+atlas = ExtResource("4_2c8oo")
+region = Rect2(144, 0, 48, 58)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i22tx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khcak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkn86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c8oo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iggtj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i22tx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2su4q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y0u1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ardw6")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0f7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_803xd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7u4q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7f8y")
+}],
+"loop": true,
+"name": &"new_animation_1",
+"speed": 10.0
+}]
+
+[node name="EnemyBomber" instance=ExtResource("1_0s12u")]
+shoots_at_player = true
+aims_at_player = true
+bullet_type = 2
+bullet_speed = 150.0
+power_up_chance = 0.2
+
+[node name="OutOfTime" parent="." index="0"]
+life_s = 30.0
+
+[node name="Marker2D" type="Marker2D" parent="Booms" index="0"]
+position = Vector2(-1, 9)
+
+[node name="Marker2D2" type="Marker2D" parent="Booms" index="1"]
+position = Vector2(14, -16)
+
+[node name="Marker2D3" type="Marker2D" parent="Booms" index="2"]
+position = Vector2(-12, -16)
+
+[node name="HealthBar" parent="." index="3"]
+offset_left = -16.0
+offset_top = -35.0
+offset_right = 16.0
+offset_bottom = -33.0
+level_low = 50
+level_med = 100
+start_health = 150
+max_health = 150
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_qkn86")
+
+[node name="AnimatedSprite2D" parent="." index="5"]
+sprite_frames = SubResource("SpriteFrames_i22tx")
+animation = &"new_animation_1"

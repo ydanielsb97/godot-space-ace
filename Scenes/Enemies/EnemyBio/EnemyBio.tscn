@@ -1,0 +1,175 @@
+[gd_scene load_steps=24 format=3 uid="uid://d3mprushou85k"]
+
+[ext_resource type="PackedScene" uid="uid://dts4qr3j5cjmc" path="res://Scenes/Enemies/EnemyShip/EnemyShip.tscn" id="1_dbf8k"]
+[ext_resource type="Texture2D" uid="uid://d35dgeds5jf3u" path="res://assets/ships/biomech_1.png" id="2_or8oc"]
+[ext_resource type="Texture2D" uid="uid://pt8bc3smj0ji" path="res://assets/ships/biomech_2.png" id="3_jkabe"]
+[ext_resource type="Texture2D" uid="uid://bc4a1g43qt2rp" path="res://assets/ships/biomech_3.png" id="4_skyhl"]
+[ext_resource type="Texture2D" uid="uid://cydbbwru8lljc" path="res://assets/ships/biomech_4.png" id="5_ee35o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ee35o"]
+radius = 15.0
+height = 40.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkabe"]
+atlas = ExtResource("2_or8oc")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skyhl"]
+atlas = ExtResource("2_or8oc")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ee35o"]
+atlas = ExtResource("2_or8oc")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bh0mv"]
+atlas = ExtResource("2_or8oc")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_golwy"]
+atlas = ExtResource("3_jkabe")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_leeio"]
+atlas = ExtResource("3_jkabe")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrgm3"]
+atlas = ExtResource("3_jkabe")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iag21"]
+atlas = ExtResource("3_jkabe")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vo4ck"]
+atlas = ExtResource("4_skyhl")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oq6rn"]
+atlas = ExtResource("4_skyhl")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cknwe"]
+atlas = ExtResource("4_skyhl")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ovn7"]
+atlas = ExtResource("4_skyhl")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k01yw"]
+atlas = ExtResource("5_ee35o")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1cym"]
+atlas = ExtResource("5_ee35o")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jo4hn"]
+atlas = ExtResource("5_ee35o")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqh1h"]
+atlas = ExtResource("5_ee35o")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_golwy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkabe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skyhl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ee35o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bh0mv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_golwy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_leeio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrgm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iag21")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vo4ck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oq6rn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cknwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ovn7")
+}],
+"loop": true,
+"name": &"new_animation_1",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k01yw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1cym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jo4hn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqh1h")
+}],
+"loop": true,
+"name": &"new_animation_2",
+"speed": 10.0
+}]
+
+[node name="EnemyBio" instance=ExtResource("1_dbf8k")]
+shoots_at_player = true
+bullet_speed = 300.0
+bullet_wait_time = 2.0
+bullet_wait_time_var = 0.2
+power_up_chance = 0.1
+
+[node name="Marker2D" type="Marker2D" parent="Booms" index="0"]
+
+[node name="Marker2D2" type="Marker2D" parent="Booms" index="1"]
+position = Vector2(7, -7)
+
+[node name="Marker2D3" type="Marker2D" parent="Booms" index="2"]
+position = Vector2(-8, 14)
+
+[node name="HealthBar" parent="." index="3"]
+offset_left = -14.0
+offset_top = -24.0
+offset_right = 14.0
+offset_bottom = -22.0
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_ee35o")
+
+[node name="AnimatedSprite2D" parent="." index="5"]
+sprite_frames = SubResource("SpriteFrames_golwy")
+autoplay = "default"
